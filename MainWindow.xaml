@@ -7,6 +7,49 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Main">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="241*"/>
+                        <ColumnDefinition Width="553*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <StackPanel Height="53" Orientation="Horizontal">
+                            <Label Height="30" Content="Game Type" Width="83"/>
+                            <ComboBox Width="98" Height="30"/>
+                        </StackPanel>
+                        <StackPanel Height="57" Orientation="Horizontal">
+                            <Label Content="Start Date" Width="81" Height="30"/>
+                            <DatePicker Width="160" Height="30"/>
+                        </StackPanel>
+                        <StackPanel Height="61" Orientation="Horizontal">
+                            <Label Content="End Date" Width="81" Height="30"/>
+                            <DatePicker Width="160" Height="30"/>
+                        </StackPanel>
+                        <StackPanel Height="63">
+                            <Button Content="Search" Click="Button_Click"/>
+                        </StackPanel>
+                        <StackPanel Height="175">
+                            <Label Content="Available Games"/>
+                            <ListBox Height="100" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="0,0,0,61">
+                        <Image Height="100" Width="100"/>
+                        <TextBlock TextWrapping="Wrap" Text="TextBlock" Height="246"/>
+                    </StackPanel>
+                    <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="462,381,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.582,-0.132"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Games">
+                <Label>Games tab</Label>
+            </TabItem>
+            <TabItem Header="Bookings">
+                <Label>Bookings tab</Label>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
